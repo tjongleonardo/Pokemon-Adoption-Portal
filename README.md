@@ -70,3 +70,9 @@ project-root/
 ├── client/        # React front end
 ├── server/        # Node.js / Express back end
 └── README.md
+```
+## Authors
+- Leonardo Tjong
+-
+-
+-
