@@ -225,7 +225,7 @@ The following collections are created automatically by Mongoose:
 
 ## Authors
 - Leonardo Tjong
--
+- Dalyn Ho
 -
 -
 -
