@@ -11,7 +11,7 @@ This project was created for a CIS 4004 term project using the MERN stack:
 
 ---
 
-## Prerequisites — What to Install
+## Prerequisites - What to Install
 
 Before running this project, you need **two** things installed on your computer:
 
@@ -27,7 +27,7 @@ Before running this project, you need **two** things installed on your computer:
 ### 2. MongoDB
 You have two options:
 
-**Option A — MongoDB Atlas (Cloud, Recommended for teams)**
+**Option A - MongoDB Atlas (Cloud, Recommended for teams)**
 1. Go to https://www.mongodb.com/atlas and create a free account
 2. Create a free shared cluster
 3. Under "Database Access," create a database user with a username and password
@@ -35,14 +35,14 @@ You have two options:
 5. Click "Connect" → "Connect your application" → copy the connection string
 6. It will look like: `mongodb+srv://<username>:<password>@cluster0.xxxxx.mongodb.net/pokemon-adoption-portal`
 
-**Option B — MongoDB Community Server (Local)**
+**Option B - MongoDB Community Server (Local)**
 1. Download from https://www.mongodb.com/try/download/community
 2. Install and start the MongoDB service
 3. Your connection string will be: `mongodb://localhost:27017/pokemon-adoption-portal`
 
 ---
 
-## Getting Started — Step by Step
+## Getting Started - Step by Step
 
 ### Step 1: Clone or Unzip the Project
 Make sure you have the project folder with both `server/` and `client/` directories.
@@ -164,8 +164,8 @@ project-root/
 ---
 
 ## User Roles
-1. **Administrator** — full CRUD access to all entities
-2. **Standard User** — can browse Pokémon, manage their own applications
+1. **Administrator** - full CRUD access to all entities
+2. **Standard User** - can browse Pokémon, manage their own applications
 
 The login page is the first screen shown. New users can create an account with a unique username.
 
