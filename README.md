@@ -27,13 +27,13 @@ Before running this project, you need **two** things installed on your computer:
 ### 2. MongoDB
 You have two options:
 
-**Option A - MongoDB Atlas (Cloud, Recommended for teams)**
-1. Go to https://www.mongodb.com/atlas and create a free account
-2. Create a free shared cluster
-3. Under "Database Access," create a database user with a username and password
-4. Under "Network Access," click "Allow Access from Anywhere" (or add your IP)
-5. Click "Connect" → "Connect your application" → copy the connection string
-6. It will look like: `mongodb+srv://<username>:<password>@cluster0.xxxxx.mongodb.net/pokemon-adoption-portal`
+**Option A - MongoDB Atlas (For Development Team)**
+1. Check your email for the MongoDB Atlas invite and accept it
+2. Log in at https://www.mongodb.com/atlas
+3. You should see the project `Pokemon-Adoption-Portal` under the organization
+4. Click on the cluster, then click **Connect** > **Drivers**
+5. Copy the connection string and replace `<db_password>` with your password
+6. It will look like: `mongodb+srv://yourname:yourpassword@pokemon-adoption-portal.u0ajazx.mongodb.net/pokemon-adoption-portal`
 
 **Option B - MongoDB Community Server (Local)**
 1. Download from https://www.mongodb.com/try/download/community
