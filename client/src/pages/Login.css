@@ -1,0 +1,346 @@
+/* ───────────────────────────────────────────────
+   Login Page – Pokémon-themed Styles
+   ─────────────────────────────────────────────── */
+
+/* ─── Page Layout ─── */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Outfit', sans-serif;
+  padding: 24px;
+}
+
+/* ─── Floating Pokéball Background ─── */
+.pokeball-bg {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.10;
+  pointer-events: none;
+  /* Red top, dark band, white bottom */
+  background:
+    linear-gradient(to bottom,
+      #e74c3c 0%, #e74c3c 46%,
+      #2c2c2c 46%, #2c2c2c 54%,
+      #f0f0f0 54%, #f0f0f0 100%
+    );
+  border: 4px solid rgba(44, 44, 44, 0.6);
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Center button on each pokeball */
+.pokeball-bg::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 22%;
+  height: 22%;
+  border-radius: 50%;
+  background: #f0f0f0;
+  border: 4px solid #2c2c2c;
+  z-index: 1;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Inner dot of the button */
+.pokeball-bg::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10%;
+  height: 10%;
+  border-radius: 50%;
+  background: #fff;
+  z-index: 2;
+}
+
+.pokeball-bg-1 {
+  width: 400px;
+  height: 400px;
+  top: -100px;
+  right: -80px;
+  animation: float-1 14s ease-in-out infinite;
+}
+
+.pokeball-bg-2 {
+  width: 250px;
+  height: 250px;
+  bottom: -60px;
+  left: -40px;
+  animation: float-2 18s ease-in-out infinite;
+}
+
+.pokeball-bg-3 {
+  width: 150px;
+  height: 150px;
+  top: 40%;
+  left: 10%;
+  animation: float-3 12s ease-in-out infinite;
+}
+
+@keyframes float-1 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50%      { transform: translate(-30px, 40px) rotate(15deg); }
+}
+@keyframes float-2 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50%      { transform: translate(25px, -35px) rotate(-10deg); }
+}
+@keyframes float-3 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50%      { transform: translate(20px, 25px) rotate(20deg); }
+}
+
+/* ─── Card ─── */
+.login-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 440px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 40px 36px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  animation: card-in 0.6s ease-out;
+}
+
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(30px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ─── Header ─── */
+.login-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.login-header h1 {
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  letter-spacing: -0.02em;
+}
+
+.login-subtitle {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+/* ─── Pokéball Icon ─── */
+.pokeball-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 20px rgba(231, 76, 60, 0.3);
+}
+
+.pokeball-top {
+  width: 100%;
+  height: 50%;
+  background: #e74c3c;
+}
+
+.pokeball-bottom {
+  width: 100%;
+  height: 50%;
+  background: #f0f0f0;
+}
+
+.pokeball-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  border: 3px solid #333;
+  z-index: 2;
+}
+
+/* ─── Tab Switcher ─── */
+.tab-switcher {
+  display: flex;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 4px;
+  margin-bottom: 24px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.45);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(231, 76, 60, 0.35);
+}
+
+.tab-btn:hover:not(.active) {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ─── Error ─── */
+.error-msg {
+  background: rgba(231, 76, 60, 0.15);
+  border: 1px solid rgba(231, 76, 60, 0.35);
+  color: #ff6b6b;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+/* ─── Form ─── */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.input-group input,
+.input-group select {
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  outline: none;
+}
+
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: rgba(231, 76, 60, 0.6);
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.15);
+}
+
+.input-group select {
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
+.input-group select option {
+  background: #1a1a2e;
+  color: #fff;
+}
+
+/* ─── Submit Button ─── */
+.submit-btn {
+  margin-top: 8px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 18px rgba(231, 76, 60, 0.35);
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(231, 76, 60, 0.45);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ─── Switch Text ─── */
+.switch-text {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.85rem;
+  margin-top: 20px;
+}
+
+.switch-link {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.switch-link:hover {
+  color: #ff6b6b;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 28px 22px;
+    border-radius: 18px;
+  }
+
+  .login-header h1 {
+    font-size: 1.35rem;
+  }
+}
