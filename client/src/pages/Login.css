@@ -222,6 +222,18 @@
   text-align: center;
 }
 
+/* ─── Success ─── */
+.success-msg {
+  background: rgba(46, 204, 113, 0.15);
+  border: 1px solid rgba(46, 204, 113, 0.35);
+  color: #2ecc71;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
 /* ─── Form ─── */
 .login-form {
   display: flex;
