@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
 import axios from 'axios';
 import './Login.css';
 
@@ -202,7 +203,7 @@ export default function Login() {
                 onClick={() => setShowPassword(!showPassword)}
                 tabIndex={-1}
               >
-                {showPassword ? '🙈' : '👁️'}
+                {showPassword ? <EyeInvisibleOutlined /> : <EyeOutlined />}
               </button>
             </div>
             {fieldErrors.password && <span className="field-error">{fieldErrors.password}</span>}
