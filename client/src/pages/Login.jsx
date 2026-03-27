@@ -11,6 +11,7 @@ export default function Login() {
     region: ''
   });
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -20,6 +21,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
+    setSuccess('');
     setLoading(true);
 
     try {
@@ -34,8 +36,15 @@ export default function Login() {
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('trainer', JSON.stringify(res.data.trainer));
 
-      // Redirect based on role
-      window.location.href = '/';
+      // Show success message, then redirect
+      const name = res.data.trainer.username;
+      setSuccess(isRegistering
+        ? `Welcome, ${name}! Account created successfully!`
+        : `Welcome back, ${name}!`);
+
+      setTimeout(() => {
+        window.location.href = '/';
+      }, 1500);
     } catch (err) {
       setError(err.response?.data?.message || 'Something went wrong');
     } finally {
@@ -87,6 +96,7 @@ export default function Login() {
         </div>
 
         {error && <div className="error-msg">{error}</div>}
+        {success && <div className="success-msg">{success}</div>}
 
         <form onSubmit={handleSubmit} className="login-form">
           <div className="input-group">
