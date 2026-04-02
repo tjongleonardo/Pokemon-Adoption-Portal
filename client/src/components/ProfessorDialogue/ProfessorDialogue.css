@@ -43,6 +43,25 @@
   inset: 0;
 }
 
+.bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+/* When a bg-image is present, the gradient becomes a subtle overlay */
+.bg-image ~ .bg-gradient {
+  background:
+    radial-gradient(ellipse at 20% 80%, var(--region-color) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, var(--region-accent) 0%, transparent 40%),
+    linear-gradient(180deg, rgba(10, 10, 21, 0.5) 0%, rgba(26, 26, 46, 0.4) 50%, rgba(15, 15, 26, 0.6) 100%);
+  opacity: 0.7;
+}
+
 .bg-gradient {
   position: absolute;
   inset: 0;
@@ -51,6 +70,7 @@
     radial-gradient(ellipse at 80% 20%, var(--region-accent) 0%, transparent 40%),
     linear-gradient(180deg, #0a0a15 0%, #1a1a2e 50%, #0f0f1a 100%);
   opacity: 0.9;
+  z-index: 1;
 }
 
 .bg-particles {
@@ -59,6 +79,7 @@
   background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
   background-size: 30px 30px;
   animation: particleFloat 20s linear infinite;
+  z-index: 2;
 }
 
 .bg-scanlines {
@@ -72,6 +93,7 @@
     rgba(0, 0, 0, 0.1) 4px
   );
   pointer-events: none;
+  z-index: 2;
 }
 
 /* ─── Region Banner ─── */
