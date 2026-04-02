@@ -59,7 +59,7 @@ export const REGIONS = {
       "Are you ready to meet the Pokémon waiting for adoption?"
     ],
     // Featured Pokemon species for this region (used in showcase)
-    featuredPokemon: ['Bulbasaur', 'Charmander', 'Squirtle', 'Pikachu'],
+    featuredPokemon: ['Bulbasaur', 'Charmander', 'Squirtle'],
     description: 'The original region where Pokémon training began. Home to the Indigo League.'
   },
 
@@ -86,7 +86,7 @@ export const REGIONS = {
       "Our Pokémon have deep connections to the region's ancient history.",
       "Let me introduce you to the Pokémon seeking loving trainers!"
     ],
-    featuredPokemon: ['Chikorita', 'Cyndaquil', 'Totodile', 'Togepi'],
+    featuredPokemon: ['Chikorita', 'Cyndaquil', 'Totodile'],
     description: 'A traditional region west of Kanto, known for its historic towers and legends.'
   },
 
@@ -113,7 +113,7 @@ export const REGIONS = {
       "From volcanic mountains to deep seas, our Pokémon are as varied as the land!",
       "Come, let me show you the amazing Pokémon we have here!"
     ],
-    featuredPokemon: ['Treecko', 'Torchic', 'Mudkip', 'Ralts'],
+    featuredPokemon: ['Treecko', 'Torchic', 'Mudkip'],
     description: 'A tropical region with abundant water routes and a rich ecosystem.'
   },
 
@@ -140,7 +140,7 @@ export const REGIONS = {
       "The Pokémon here have witnessed the creation of time and space itself.",
       "If you're serious about becoming a trainer, step forward and meet them."
     ],
-    featuredPokemon: ['Turtwig', 'Chimchar', 'Piplup', 'Shinx'],
+    featuredPokemon: ['Turtwig', 'Chimchar', 'Piplup'],
     description: 'A northern region rich in mythology, home to legendary Pokémon of time and space.'
   },
 
@@ -167,7 +167,7 @@ export const REGIONS = {
       "Our Pokémon are unique, you won't find them anywhere else.",
       "Let's find you the perfect partner to start your journey!"
     ],
-    featuredPokemon: ['Snivy', 'Tepig', 'Oshawott', 'Zorua'],
+    featuredPokemon: ['Snivy', 'Tepig', 'Oshawott'],
     description: 'A far-away region inspired by urban life, with entirely new Pokémon species.'
   },
 
@@ -194,7 +194,7 @@ export const REGIONS = {
       "Our Pokémon are as stylish as they are powerful!",
       "Shall we see which Pokémon resonates with your heart?"
     ],
-    featuredPokemon: ['Chespin', 'Fennekin', 'Froakie', 'Flabébé'],
+    featuredPokemon: ['Chespin', 'Fennekin', 'Froakie'],
     description: 'An elegant region inspired by France, where Mega Evolution was discovered.'
   },
 
@@ -221,7 +221,7 @@ export const REGIONS = {
       "Our Pokémon have adapted in unique ways, we call them regional forms.",
       "Let's find you an awesome partner to ride the waves with!"
     ],
-    featuredPokemon: ['Rowlet', 'Litten', 'Popplio', 'Rockruff'],
+    featuredPokemon: ['Rowlet', 'Litten', 'Popplio'],
     description: 'A tropical archipelago with unique regional variants and the Island Challenge.'
   },
 
@@ -248,7 +248,7 @@ export const REGIONS = {
       "Our Pokémon grow to massive sizes and unleash tremendous power!",
       "Ready to meet some amazing partners? Let's go!"
     ],
-    featuredPokemon: ['Grookey', 'Scorbunny', 'Sobble', 'Wooloo'],
+    featuredPokemon: ['Grookey', 'Scorbunny', 'Sobble'],
     description: 'An industrial region inspired by the UK, famous for Dynamax battles.'
   },
 
@@ -275,7 +275,7 @@ export const REGIONS = {
       "Our Pokémon possess a unique ability called Terastallization!",
       "Let me introduce you to the wonderful partners awaiting adoption!"
     ],
-    featuredPokemon: ['Sprigatito', 'Fuecoco', 'Quaxly', 'Lechonk'],
+    featuredPokemon: ['Sprigatito', 'Fuecoco', 'Quaxly'],
     description: 'A sprawling open-world region centered around a grand Pokémon academy.'
   }
 };
