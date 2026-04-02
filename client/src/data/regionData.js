@@ -9,6 +9,17 @@ import professorKukui from './assets/Alola Professor Kukui.png';
 import professorMagnolia from './assets/Galar Professor Magnolia.png';
 import professorSada from './assets/Paldea Professor Sada.png';
 
+// Region background imports
+import kantoBg from './assets/Kanto.png';
+import johtoBg from './assets/Johto.png';
+import hoennBg from './assets/Hoenn.png';
+import sinnohBg from './assets/Sinnoh.png';
+import unovaBg from './assets/Unova.png';
+import kalosBg from './assets/Kalos.png';
+import alolaBg from './assets/Alola.png';
+import galarBg from './assets/Galar.png';
+import paldeaBg from './assets/Paldea.png';
+
 /**
  * Central configuration for all regions, professors, and map data.
  * 
@@ -23,6 +34,11 @@ export const REGIONS = {
     name: 'Kanto',
     subtitle: 'Where Legends Begin',
     color: '#E63946', // Red
+    // Background image for professor dialogue scene
+    // Import your image at the top of the file, then set it here:
+    // e.g. import kantoBg from './assets/kanto-bg.png';
+    //      background: kantoBg,
+    background: kantoBg,
     accentColor: '#FFB3B3',
     // Marker position on the map (percentage-based for responsiveness)
     markerPosition: { x: 88, y: 60 },
@@ -52,6 +68,7 @@ export const REGIONS = {
     name: 'Johto',
     subtitle: 'The Land of Tradition',
     color: '#FFD700', // Gold
+    background: johtoBg,
     accentColor: '#FFF3B0',
     markerPosition: { x: 78, y: 73 },
     markerImage: null,
@@ -78,6 +95,7 @@ export const REGIONS = {
     name: 'Hoenn',
     subtitle: 'Tropical Paradise',
     color: '#00CED1', // Dark Turquoise
+    background: hoennBg,
     accentColor: '#B0E0E6',
     markerPosition: { x: 52, y: 76 },
     markerImage: null,
@@ -104,6 +122,7 @@ export const REGIONS = {
     name: 'Sinnoh',
     subtitle: 'The Land of Myths',
     color: '#4169E1', // Royal Blue
+    background: sinnohBg,
     accentColor: '#B0C4DE',
     markerPosition: { x: 70, y: 30 },
     markerImage: null,
@@ -130,6 +149,7 @@ export const REGIONS = {
     name: 'Unova',
     subtitle: 'Urban Frontier',
     color: '#9370DB', // Medium Purple
+    background: unovaBg,
     accentColor: '#DDA0DD',
     markerPosition: { x: 28, y: 50 },
     markerImage: null,
@@ -156,6 +176,7 @@ export const REGIONS = {
     name: 'Kalos',
     subtitle: 'Land of Beauty',
     color: '#FF69B4', // Hot Pink
+    background: kalosBg,
     accentColor: '#FFB6C1',
     markerPosition: { x: 53, y: 41 },
     markerImage: null,
@@ -182,6 +203,7 @@ export const REGIONS = {
     name: 'Alola',
     subtitle: 'Island Paradise',
     color: '#FF8C00', // Dark Orange
+    background: alolaBg,
     accentColor: '#FFDAB9',
     markerPosition: { x: 25, y: 86 },
     markerImage: null,
@@ -208,6 +230,7 @@ export const REGIONS = {
     name: 'Galar',
     subtitle: 'Industrial Wonder',
     color: '#DC143C', // Crimson
+    background: galarBg,
     accentColor: '#F08080',
     markerPosition: { x: 53, y: 33 },
     markerImage: null,
@@ -234,6 +257,7 @@ export const REGIONS = {
     name: 'Paldea',
     subtitle: 'Open World Academy',
     color: '#9932CC', // Dark Orchid
+    background: paldeaBg,
     accentColor: '#DA70D6',
     markerPosition: { x: 48, y: 43 },
     markerImage: null,

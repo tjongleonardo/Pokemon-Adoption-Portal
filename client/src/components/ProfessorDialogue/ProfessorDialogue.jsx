@@ -21,7 +21,7 @@ function ProfessorDialogue({ region, onComplete, onClose }) {
   // Ref to track the typewriter interval so we can clear it on skip
   const typewriterRef = useRef(null);
 
-  const { professor, dialogues, name: regionName, color, accentColor, subtitle } = region;
+  const { professor, dialogues, name: regionName, color, accentColor, subtitle, background } = region;
   const currentDialogue = dialogues[currentDialogueIndex];
   const isLastDialogue = currentDialogueIndex === dialogues.length - 1;
 
@@ -114,6 +114,9 @@ function ProfessorDialogue({ region, onComplete, onClose }) {
 
       {/* Background with region theming */}
       <div className="dialogue-background">
+        {background && (
+          <img src={background} alt="" className="bg-image" />
+        )}
         <div className="bg-gradient"></div>
         <div className="bg-particles"></div>
         <div className="bg-scanlines"></div>
