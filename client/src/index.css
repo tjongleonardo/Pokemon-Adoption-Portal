@@ -1,0 +1,115 @@
+/* ─── Global Variables ─── */
+:root {
+  /* Global Brand */
+  --pokedex-red: #CC0000;
+
+  /* Dark Gaming Theme Defaults */
+  --theme-bg: radial-gradient(circle at center, #2a2a35 0%, #0d0d14 100%);
+  --theme-card-bg: rgba(20, 20, 30, 0.7);
+  --theme-border: rgba(255, 255, 255, 0.15);
+  --theme-text: #FFFFFF;
+  --theme-text-muted: rgba(255, 255, 255, 0.5);
+  --theme-input-bg: rgba(0, 0, 0, 0.2);
+  --theme-input-border: rgba(255, 255, 255, 0.1);
+  --theme-btn-bg: rgba(0, 0, 0, 0.4);
+  --theme-header-color: #FFFFFF;
+}
+
+
+
+/* ─── Global Reset ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--theme-bg);
+  color: var(--theme-text);
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ─── Global Custom UI Components ─── */
+.custom-card {
+  background: var(--theme-card-bg);
+  border: 1px solid var(--theme-border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-card-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.custom-btn {
+  background: var(--theme-btn-bg);
+  border: 1px solid var(--theme-border);
+  color: var(--theme-text);
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.custom-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.custom-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.custom-input {
+  background: var(--theme-input-bg);
+  border: 1px solid var(--theme-input-border);
+  color: var(--theme-text);
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-family: inherit;
+  width: 100%;
+  outline: none;
+}
+
+.custom-input:focus {
+  border-color: var(--pokedex-red);
+}
+
+.custom-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.empty-state {
+  padding: 48px;
+  text-align: center;
+  color: var(--theme-text-muted);
+}

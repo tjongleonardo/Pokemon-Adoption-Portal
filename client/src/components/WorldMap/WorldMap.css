@@ -1,0 +1,473 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   WORLD MAP STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.world-map-container {
+  height: calc(100vh - 64px);
+  overflow: hidden;
+  background: linear-gradient(180deg, #0a0a1a 0%, #1a1a2e 100%);
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ─── Header ─── */
+.map-header {
+  text-align: center;
+  flex-shrink: 0;
+  animation: fadeInDown 0.6s ease-out;
+}
+
+.map-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 4px 0;
+  text-shadow: 0 4px 20px rgba(102, 126, 234, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.title-icon {
+  font-size: 1.8rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.map-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* ─── Map Container ─── */
+.world-map {
+  position: relative;
+  /* Use auto width but constrain by height and aspect ratio to ensure it fits screen */
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  max-height: calc(100vh - 220px);
+  margin: 0 auto;
+  
+  border-radius: 20px;
+  overflow: hidden;
+  background-size: 100% 100%; /* Stretch map slightly to guarantee markers align perfectly */
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow:
+    0 0 60px rgba(102, 126, 234, 0.3),
+    inset 0 0 100px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  animation: fadeIn 0.8s ease-out;
+}
+
+.map-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 30%, rgba(0, 0, 0, 0.4) 100%);
+  pointer-events: none;
+}
+
+.map-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+/* ─── Region Marker ─── */
+.region-marker {
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), z-index 0s;
+}
+
+.region-marker:focus {
+  outline: none;
+}
+
+.region-marker:focus-visible .marker-fallback {
+  box-shadow: 0 0 0 3px var(--region-color), 0 0 20px var(--region-color);
+}
+
+.region-marker.hovered,
+.region-marker.active {
+  z-index: 20;
+}
+
+/* ─── Marker Fallback (PokeCenter Style) ─── */
+.marker-fallback {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marker-pokecenter {
+  width: 40px;
+  height: 35px;
+  position: relative;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+  transition: filter 0.3s ease;
+}
+
+.region-marker.hovered .marker-pokecenter,
+.region-marker.active .marker-pokecenter {
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 15px var(--region-color));
+}
+
+.pokecenter-roof {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+  border-bottom: 14px solid #ff6b6b;
+}
+
+.pokecenter-body {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 22px;
+  background: linear-gradient(180deg, #fff 0%, #f0f0f0 100%);
+  border-radius: 0 0 4px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokecenter-cross {
+  width: 12px;
+  height: 12px;
+  position: relative;
+}
+
+.pokecenter-cross::before,
+.pokecenter-cross::after {
+  content: '';
+  position: absolute;
+  background: #ff6b6b;
+  border-radius: 1px;
+}
+
+.pokecenter-cross::before {
+  width: 100%;
+  height: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.pokecenter-cross::after {
+  width: 4px;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ─── Marker Pulse Animation ─── */
+.marker-pulse {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--region-color);
+  opacity: 0;
+  animation: pulse 2s ease-out infinite;
+  pointer-events: none;
+}
+
+.region-marker.active .marker-pulse {
+  animation: pulse 1.5s ease-out infinite;
+}
+
+/* ─── Marker Image (for custom assets) ─── */
+.marker-image {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.region-marker.hovered .marker-image,
+.region-marker.active .marker-image {
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 15px var(--region-color));
+}
+
+/* ─── Marker Tooltip ─── */
+.marker-tooltip {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: linear-gradient(135deg, rgba(20, 20, 40, 0.95) 0%, rgba(40, 40, 80, 0.95) 100%);
+  border: 1px solid var(--region-color);
+  border-radius: 12px;
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(var(--region-color), 0.2);
+}
+
+.marker-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: var(--region-color);
+}
+
+.region-marker.hovered .marker-tooltip,
+.region-marker:focus-visible .marker-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.tooltip-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.tooltip-subtitle {
+  font-size: 0.75rem;
+  color: var(--region-accent);
+}
+
+/* ─── Map Legend ─── */
+.map-legend {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(20, 20, 40, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.85rem;
+}
+
+.legend-marker {
+  width: 16px;
+  height: 14px;
+  background: linear-gradient(180deg, #ff6b6b 40%, #fff 40%);
+  border-radius: 0 0 2px 2px;
+  position: relative;
+}
+
+.legend-marker::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 6px solid #ff6b6b;
+}
+
+/* ─── Region Preview Strip ─── */
+.region-preview-strip {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 8px 4px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.region-preview-strip::-webkit-scrollbar {
+  height: 6px;
+}
+
+.region-preview-strip::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.region-preview-strip::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.region-preview-card {
+  flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(30, 30, 50, 0.9) 0%, rgba(50, 50, 80, 0.9) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.region-preview-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--region-color);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.region-preview-card:hover,
+.region-preview-card.active {
+  border-color: var(--region-color);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 0 20px color-mix(in srgb, var(--region-color) 30%, transparent);
+}
+
+.region-preview-card:hover::before,
+.region-preview-card.active::before {
+  opacity: 0.15;
+}
+
+.preview-name {
+  position: relative;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  z-index: 1;
+}
+
+/* ─── Animations ─── */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .world-map-container {
+    padding: 16px;
+  }
+
+  .map-title {
+    font-size: 1.75rem;
+  }
+
+  .map-subtitle {
+    font-size: 0.95rem;
+  }
+
+
+  .marker-fallback {
+    width: 40px;
+    height: 40px;
+  }
+
+  .marker-pokecenter {
+    width: 32px;
+    height: 28px;
+  }
+
+  .pokecenter-roof {
+    border-left-width: 18px;
+    border-right-width: 18px;
+    border-bottom-width: 11px;
+  }
+
+  .pokecenter-body {
+    width: 28px;
+    height: 18px;
+  }
+
+  .pokecenter-cross {
+    width: 10px;
+    height: 10px;
+  }
+
+  .marker-tooltip {
+    display: none;
+  }
+
+  .map-legend {
+    display: none;
+  }
+
+  .region-preview-card {
+    padding: 10px 18px;
+  }
+
+  .preview-name {
+    font-size: 0.8rem;
+  }
+}
