@@ -45,6 +45,7 @@ export const REGIONS = {
       "Here you'll find classic partners like Bulbasaur, Charmander, and Squirtle.",
       "Are you ready to meet the Pokémon waiting for adoption?"
     ],
+    // Featured Pokemon species for this region (used in showcase)
     featuredPokemon: ['Bulbasaur', 'Charmander', 'Squirtle'],
     description: 'The original region where Pokémon training began. Home to the Indigo League.'
   },
