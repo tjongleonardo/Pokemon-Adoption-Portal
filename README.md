@@ -156,55 +156,44 @@ Pokemon-Adoption-Portal/
 ├── server/                         # Node.js / Express backend
 │   ├── models/                     # Mongoose schemas
 │   │   ├── trainerm.js             # Trainer (User) model
-│   │   ├── pokemonm.js             # Pokemon model (updated)
+│   │   ├── pokemonm.js             # Pokemon model
 │   │   ├── pokecenterm.js          # PokeCenter model
-│   │   └── applicationm.js         # Application model (updated)
+│   │   └── applicationm.js         # Application model
 │   ├── routes/                     # Express route handlers
 │   │   ├── trainerr.js             # Trainer routes (register, login)
-│   │   ├── pokemonr.js             # Pokemon routes (updated)
+│   │   ├── pokemonr.js             # Pokemon routes
 │   │   ├── pokecenterr.js          # PokeCenter routes
-│   │   └── applicationr.js         # Application routes (updated)
+│   │   └── applicationr.js         # Application routes
 │   ├── mw/                         # Middleware
 │   │   └── auth.js                 # JWT authentication
-│   ├── seedStarters.js             # Database seeding script (NEW)
-│   ├── checkDatabase.js            # Database verification (NEW)
-│   ├── makeAdmin.js                # Admin user utility (NEW)
+│   ├── seedStarters.js             # Database seeding script 
+│   ├── checkDatabase.js            # Database verification 
+│   ├── makeAdmin.js                # Admin user utility 
 │   ├── index.js                    # Server entry point
 │   ├── package.json
-│   ├── .env.example                # Environment template (NEW)
-│   └── .gitignore                  # Git ignore rules (NEW)
+│   ├── .env.example                # Environment template 
+│   └── .gitignore                  # Git ignore rules
 │
 ├── client/                         # React frontend (Vite)
 │   ├── src/
 │   │   ├── pages/                  # Page components
 │   │   │   ├── Login.jsx           # Login/Register page
-│   │   │   ├── Browse.jsx          # Browse Pokemon (updated)
-│   │   │   ├── Centers.jsx         # PokeCenters page (updated)
-│   │   │   ├── MyApplications.jsx  # User applications (updated)
-│   │   │   └── AdminReview.jsx     # Admin panel (NEW)
+│   │   │   ├── Browse.jsx          # Browse Pokemon 
+│   │   │   ├── Centers.jsx         # PokeCenters page 
+│   │   │   ├── MyApplications.jsx  # User applications 
+│   │   │   └── AdminReview.jsx     # Admin panel 
 │   │   ├── components/
-│   │   │   ├── NavBar.jsx          # Navigation bar (NEW)
-│   │   │   └── NavBar.css          # Navigation styles (NEW)
+│   │   │   ├── NavBar.jsx          # Navigation bar 
+│   │   │   └── NavBar.css          # Navigation styles 
 │   │   ├── context/
 │   │   │   └── AuthContext.jsx     # Auth state management
-│   │   ├── App.jsx                 # Root component (updated)
+│   │   ├── App.jsx                 # Root component 
 │   │   ├── main.jsx                # React entry point
 │   │   └── index.css               # Global styles
 │   ├── index.html
 │   ├── vite.config.js
 │   ├── package.json
-│   └── .gitignore                  # Git ignore rules (NEW)
-│
-├── Documentation/                  # Comprehensive guides (NEW)
-│   ├── SESSION_PROGRESS.md         # Complete session log
-│   ├── UPDATES.md                  # Technical changes
-│   ├── APPLICATION_FLOW.md         # User journey guide
-│   ├── ADMIN_GUIDE.md              # Admin documentation
-│   ├── ADMIN_QUICK_START.md        # Quick admin reference
-│   ├── GITHUB_PUSH_GUIDE.md        # Security & push guide
-│   ├── SERVER_PUSH_CHECKLIST.md    # Server files checklist
-│   ├── CLIENT_PUSH_GUIDE.md        # Client files checklist
-│   └── MASTER_PUSH_CHECKLIST.md    # Complete push guide
+│   └── .gitignore                  # Git ignore rules
 │
 └── README.md                       # This file
 ```
@@ -386,8 +375,6 @@ npm run preview    # Preview production build
 
 ## 🐛 Troubleshooting
 
-### Port 5000 in use (Mac)
-See "For Mac Users" section above.
 
 ### MongoDB connection fails
 - Check your connection string in `.env`
