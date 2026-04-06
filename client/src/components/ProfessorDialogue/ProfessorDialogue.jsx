@@ -2,16 +2,8 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import { ANIMATION_CONFIG } from '../../data/regionData';
 import './ProfessorDialogue.css';
 
-/**
- * ProfessorDialogue - Persona-inspired dialogue scene
- * 
- * Features:
- * - Dramatic portrait area (supports custom PNG or styled fallback)
- * - Cinematic dialogue box with typewriter effect
- * - Click to skip typewriter animation and show full text instantly
- * - Click again to advance to next dialogue
- * - Region theming
- */
+// Persona-inspired dialogue scene with typewriter effect
+// Click to skip animation, click again to advance dialogue
 function ProfessorDialogue({ region, onComplete, onClose }) {
   const [currentDialogueIndex, setCurrentDialogueIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState('');

@@ -20,29 +20,16 @@ import alolaBg from './assets/Alola.png';
 import galarBg from './assets/Galar.png';
 import paldeaBg from './assets/Paldea.png';
 
-/**
- * Central configuration for all regions, professors, and map data.
- * 
- * MARKER POSITIONS:
- * - Coordinates are percentages (0-100) of the map container
- * - Adjust `x` and `y` values to reposition markers on the map
- */
-
+// Region config with professors and map data. Marker positions are percentages (0-100).
 export const REGIONS = {
   kanto: {
     id: 'kanto',
     name: 'Kanto',
     subtitle: 'Where Legends Begin',
-    color: '#E63946', // Red
-    // Background image for professor dialogue scene
-    // Import your image at the top of the file, then set it here:
-    // e.g. import kantoBg from './assets/kanto-bg.png';
-    //      background: kantoBg,
+    color: '#E63946',
     background: kantoBg,
     accentColor: '#FFB3B3',
-    // Marker position on the map (percentage-based for responsiveness)
     markerPosition: { x: 88, y: 60 },
-    // Set to a path like '/assets/markers/kanto.png' to use custom marker image
     markerImage: null,
     professor: {
       name: 'Professor Oak',
@@ -58,8 +45,7 @@ export const REGIONS = {
       "Here you'll find classic partners like Bulbasaur, Charmander, and Squirtle.",
       "Are you ready to meet the Pokémon waiting for adoption?"
     ],
-    // Featured Pokemon species for this region (used in showcase)
-    featuredPokemon: ['Bulbasaur', 'Charmander', 'Squirtle', 'Pikachu'],
+    featuredPokemon: ['Bulbasaur', 'Charmander', 'Squirtle'],
     description: 'The original region where Pokémon training began. Home to the Indigo League.'
   },
 
@@ -67,7 +53,7 @@ export const REGIONS = {
     id: 'johto',
     name: 'Johto',
     subtitle: 'The Land of Tradition',
-    color: '#FFD700', // Gold
+    color: '#FFD700',
     background: johtoBg,
     accentColor: '#FFF3B0',
     markerPosition: { x: 78, y: 73 },
@@ -86,7 +72,7 @@ export const REGIONS = {
       "Our Pokémon have deep connections to the region's ancient history.",
       "Let me introduce you to the Pokémon seeking loving trainers!"
     ],
-    featuredPokemon: ['Chikorita', 'Cyndaquil', 'Totodile', 'Togepi'],
+    featuredPokemon: ['Chikorita', 'Cyndaquil', 'Totodile'],
     description: 'A traditional region west of Kanto, known for its historic towers and legends.'
   },
 
@@ -94,7 +80,7 @@ export const REGIONS = {
     id: 'hoenn',
     name: 'Hoenn',
     subtitle: 'Tropical Paradise',
-    color: '#00CED1', // Dark Turquoise
+    color: '#00CED1',
     background: hoennBg,
     accentColor: '#B0E0E6',
     markerPosition: { x: 52, y: 76 },
@@ -113,7 +99,7 @@ export const REGIONS = {
       "From volcanic mountains to deep seas, our Pokémon are as varied as the land!",
       "Come, let me show you the amazing Pokémon we have here!"
     ],
-    featuredPokemon: ['Treecko', 'Torchic', 'Mudkip', 'Ralts'],
+    featuredPokemon: ['Treecko', 'Torchic', 'Mudkip'],
     description: 'A tropical region with abundant water routes and a rich ecosystem.'
   },
 
@@ -121,7 +107,7 @@ export const REGIONS = {
     id: 'sinnoh',
     name: 'Sinnoh',
     subtitle: 'The Land of Myths',
-    color: '#4169E1', // Royal Blue
+    color: '#4169E1',
     background: sinnohBg,
     accentColor: '#B0C4DE',
     markerPosition: { x: 70, y: 30 },
@@ -140,7 +126,7 @@ export const REGIONS = {
       "The Pokémon here have witnessed the creation of time and space itself.",
       "If you're serious about becoming a trainer, step forward and meet them."
     ],
-    featuredPokemon: ['Turtwig', 'Chimchar', 'Piplup', 'Shinx'],
+    featuredPokemon: ['Turtwig', 'Chimchar', 'Piplup'],
     description: 'A northern region rich in mythology, home to legendary Pokémon of time and space.'
   },
 
@@ -148,7 +134,7 @@ export const REGIONS = {
     id: 'unova',
     name: 'Unova',
     subtitle: 'Urban Frontier',
-    color: '#9370DB', // Medium Purple
+    color: '#9370DB',
     background: unovaBg,
     accentColor: '#DDA0DD',
     markerPosition: { x: 28, y: 50 },
@@ -167,7 +153,7 @@ export const REGIONS = {
       "Our Pokémon are unique, you won't find them anywhere else.",
       "Let's find you the perfect partner to start your journey!"
     ],
-    featuredPokemon: ['Snivy', 'Tepig', 'Oshawott', 'Zorua'],
+    featuredPokemon: ['Snivy', 'Tepig', 'Oshawott'],
     description: 'A far-away region inspired by urban life, with entirely new Pokémon species.'
   },
 
@@ -175,7 +161,7 @@ export const REGIONS = {
     id: 'kalos',
     name: 'Kalos',
     subtitle: 'Land of Beauty',
-    color: '#FF69B4', // Hot Pink
+    color: '#FF69B4',
     background: kalosBg,
     accentColor: '#FFB6C1',
     markerPosition: { x: 53, y: 41 },
@@ -194,7 +180,7 @@ export const REGIONS = {
       "Our Pokémon are as stylish as they are powerful!",
       "Shall we see which Pokémon resonates with your heart?"
     ],
-    featuredPokemon: ['Chespin', 'Fennekin', 'Froakie', 'Flabébé'],
+    featuredPokemon: ['Chespin', 'Fennekin', 'Froakie'],
     description: 'An elegant region inspired by France, where Mega Evolution was discovered.'
   },
 
@@ -202,7 +188,7 @@ export const REGIONS = {
     id: 'alola',
     name: 'Alola',
     subtitle: 'Island Paradise',
-    color: '#FF8C00', // Dark Orange
+    color: '#FF8C00',
     background: alolaBg,
     accentColor: '#FFDAB9',
     markerPosition: { x: 25, y: 86 },
@@ -221,7 +207,7 @@ export const REGIONS = {
       "Our Pokémon have adapted in unique ways, we call them regional forms.",
       "Let's find you an awesome partner to ride the waves with!"
     ],
-    featuredPokemon: ['Rowlet', 'Litten', 'Popplio', 'Rockruff'],
+    featuredPokemon: ['Rowlet', 'Litten', 'Popplio'],
     description: 'A tropical archipelago with unique regional variants and the Island Challenge.'
   },
 
@@ -229,7 +215,7 @@ export const REGIONS = {
     id: 'galar',
     name: 'Galar',
     subtitle: 'Industrial Wonder',
-    color: '#DC143C', // Crimson
+    color: '#DC143C',
     background: galarBg,
     accentColor: '#F08080',
     markerPosition: { x: 53, y: 33 },
@@ -248,7 +234,7 @@ export const REGIONS = {
       "Our Pokémon grow to massive sizes and unleash tremendous power!",
       "Ready to meet some amazing partners? Let's go!"
     ],
-    featuredPokemon: ['Grookey', 'Scorbunny', 'Sobble', 'Wooloo'],
+    featuredPokemon: ['Grookey', 'Scorbunny', 'Sobble'],
     description: 'An industrial region inspired by the UK, famous for Dynamax battles.'
   },
 
@@ -256,7 +242,7 @@ export const REGIONS = {
     id: 'paldea',
     name: 'Paldea',
     subtitle: 'Open World Academy',
-    color: '#9932CC', // Dark Orchid
+    color: '#9932CC',
     background: paldeaBg,
     accentColor: '#DA70D6',
     markerPosition: { x: 48, y: 43 },
@@ -275,7 +261,7 @@ export const REGIONS = {
       "Our Pokémon possess a unique ability called Terastallization!",
       "Let me introduce you to the wonderful partners awaiting adoption!"
     ],
-    featuredPokemon: ['Sprigatito', 'Fuecoco', 'Quaxly', 'Lechonk'],
+    featuredPokemon: ['Sprigatito', 'Fuecoco', 'Quaxly'],
     description: 'A sprawling open-world region centered around a grand Pokémon academy.'
   }
 };
@@ -289,13 +275,9 @@ export const getRegion = (id) => REGIONS[id] || null;
 // Import map image at the top of the file
 import mapimage from './assets/map.png';
 
-// Default map background (can be replaced with custom image)
 export const MAP_CONFIG = {
-  // Set to a path like '/assets/map/world-map.png' for custom map background
   backgroundImage: mapimage,
-  // Fallback gradient when no image is provided
   fallbackBackground: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
-  // Aspect ratio for the map container
   aspectRatio: '16 / 9',
 };
 

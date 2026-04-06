@@ -3,9 +3,7 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 const Trainer = require('../models/trainerm');
 
-// ──────────────────────────────────────────────
-//  Helper: verify JWT token from Authorization header
-// ──────────────────────────────────────────────
+// Verify JWT token from Authorization header
 function authenticate(req, res, next) {
   const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
@@ -22,9 +20,7 @@ function authenticate(req, res, next) {
   }
 }
 
-// ──────────────────────────────────────────────
-//  Helper: require admin role
-// ──────────────────────────────────────────────
+// Require admin role
 function requireAdmin(req, res, next) {
   if (req.user.role !== 'admin') {
     return res.status(403).json({ message: 'Admin access required' });
@@ -32,10 +28,7 @@ function requireAdmin(req, res, next) {
   next();
 }
 
-// ──────────────────────────────────────────────
-//  POST /api/trainers/register
-//  Public – create a new trainer account
-// ──────────────────────────────────────────────
+// POST /api/trainers/register - Create new trainer account
 router.post('/register', async (req, res) => {
   try {
     const { username, email, password, region } = req.body;
@@ -101,10 +94,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// ──────────────────────────────────────────────
-//  POST /api/trainers/login
-//  Public – authenticate & return JWT
-// ──────────────────────────────────────────────
+// POST /api/trainers/login - Authenticate & return JWT
 router.post('/login', async (req, res) => {
   try {
     const { username, password } = req.body;
@@ -144,10 +134,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// ──────────────────────────────────────────────
-//  GET /api/trainers/
-//  Admin only – list all trainers
-// ──────────────────────────────────────────────
+// GET /api/trainers/ - List all trainers (admin only)
 router.get('/', authenticate, requireAdmin, async (req, res) => {
   try {
     const trainers = await Trainer.find().select('-password');
@@ -157,10 +144,7 @@ router.get('/', authenticate, requireAdmin, async (req, res) => {
   }
 });
 
-// ──────────────────────────────────────────────
-//  GET /api/trainers/:id
-//  Authenticated – get a single trainer by ID
-// ──────────────────────────────────────────────
+// GET /api/trainers/:id - Get single trainer by ID
 router.get('/:id', authenticate, async (req, res) => {
   try {
     const trainer = await Trainer.findById(req.params.id).select('-password');
@@ -173,10 +157,7 @@ router.get('/:id', authenticate, async (req, res) => {
   }
 });
 
-// ──────────────────────────────────────────────
-//  PUT /api/trainers/:id
-//  Owner or Admin – update a trainer
-// ──────────────────────────────────────────────
+// PUT /api/trainers/:id - Update trainer (owner or admin)
 router.put('/:id', authenticate, async (req, res) => {
   try {
     // Only the owner or an admin can update
@@ -208,10 +189,7 @@ router.put('/:id', authenticate, async (req, res) => {
   }
 });
 
-// ──────────────────────────────────────────────
-//  DELETE /api/trainers/:id
-//  Admin only – delete a trainer
-// ──────────────────────────────────────────────
+// DELETE /api/trainers/:id - Delete trainer (admin only)
 router.delete('/:id', authenticate, requireAdmin, async (req, res) => {
   try {
     const trainer = await Trainer.findByIdAndDelete(req.params.id);

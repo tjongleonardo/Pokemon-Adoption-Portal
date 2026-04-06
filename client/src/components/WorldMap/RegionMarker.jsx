@@ -2,12 +2,7 @@ import { useState } from 'react';
 import { ANIMATION_CONFIG } from '../../data/regionData';
 import './WorldMap.css';
 
-/**
- * RegionMarker - Clickable PokeCenter marker on the world map
- * 
- * Supports both styled fallback and custom image markers.
- * To use a custom image, set `region.markerImage` to your PNG path.
- */
+// Clickable PokeCenter marker (supports styled fallback or custom image)
 function RegionMarker({ region, onClick, isActive }) {
   const [isHovered, setIsHovered] = useState(false);
   
