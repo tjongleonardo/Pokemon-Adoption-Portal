@@ -1,6 +1,6 @@
 # Pokémon Adoption Portal
 
-A full-stack MERN application where trainers can browse starter Pokémon from all 9 regions, submit adoption applications with custom names, and track their adoption status. Administrators can review applications and provide feedback to trainers.
+A full-stack MERN application where trainers can explore an interactive Pokémon world map, meet region professors, browse starter Pokémon from all 9 regions, submit adoption applications with custom names, and track their adoption status. Administrators can review applications and provide feedback to trainers.
 
 ---
 
@@ -43,17 +43,13 @@ If you prefer to set up manually or are on a different OS, follow the steps belo
 
 ### Step 1: Clone or Download the Project
 ```bash
-git clone https://github.com/YOUR_USERNAME/Pokemon-Adoption-Portal.git
+git clone https://github.com/tjongleonardo/Pokemon-Adoption-Portal.git
 cd Pokemon-Adoption-Portal
 ```
 
 ### Step 2: Configure Server Environment
 1. Navigate to the `server/` directory
-2. Create a `.env` file by copying the example:
-   ```bash
-   cp .env.example .env
-   ```
-3. Edit `.env` and add your MongoDB connection string:
+2. Create a `.env` file with the following variables:
    ```env
    MONGO_URI=mongodb://username:password@ac-xxxx-shard-00-00.mongodb.net:27017,ac-xxxx-shard-00-01.mongodb.net:27017,ac-xxxx-shard-00-02.mongodb.net:27017/?ssl=true&replicaSet=atlas-xxxx-shard-0&authSource=admin
    PORT=5001
@@ -75,7 +71,7 @@ npm install
 - dotenv - Environment variables
 
 ### Step 4: Seed the Database
-Populate your database with 27 starter Pokemon:
+Populate your database with 27 starter Pokémon:
 ```bash
 node seedStarters.js
 ```
@@ -90,7 +86,6 @@ Johto: 3 starters
 ...
 ```
 
-
 ### Step 5: Install Client Dependencies
 Open a **new terminal** and run:
 ```bash
@@ -99,12 +94,12 @@ npm install
 ```
 
 **Dependencies include:**
-- react - UI library
-- react-router-dom - Routing
+- react (v19) - UI library
+- react-router-dom (v7) - Routing
 - axios - HTTP client
-- **antd** - Ant Design component library
-- **@ant-design/icons** - Ant Design icons
-- vite - Build tool
+- **antd** (v6) - Ant Design component library
+- **@ant-design/icons** (v6) - Ant Design icons
+- vite (v6) - Build tool
 
 ### Step 6: Start the Server
 In the server terminal:
@@ -126,7 +121,7 @@ npm run dev
 
 You should see:
 ```
-VITE v5.x.x  ready in xxx ms
+VITE v6.x.x  ready in xxx ms
 
 ➜  Local:   http://localhost:3000/
 ➜  Network: use --host to expose
@@ -153,61 +148,85 @@ If you ever need to use port 5000, you can disable the AirPlay Receiver:
 ```
 Pokemon-Adoption-Portal/
 │
-├── server/                         # Node.js / Express backend
-│   ├── models/                     # Mongoose schemas
-│   │   ├── trainerm.js             # Trainer (User) model
-│   │   ├── pokemonm.js             # Pokemon model
-│   │   ├── pokecenterm.js          # PokeCenter model
-│   │   └── applicationm.js         # Application model
-│   ├── routes/                     # Express route handlers
-│   │   ├── trainerr.js             # Trainer routes (register, login)
-│   │   ├── pokemonr.js             # Pokemon routes
-│   │   ├── pokecenterr.js          # PokeCenter routes
-│   │   └── applicationr.js         # Application routes
-│   ├── mw/                         # Middleware
-│   │   └── auth.js                 # JWT authentication
-│   ├── seedStarters.js             # Database seeding script 
-│   ├── checkDatabase.js            # Database verification 
-│   ├── makeAdmin.js                # Admin user utility 
-│   ├── index.js                    # Server entry point
-│   ├── package.json
-│   ├── .env.example                # Environment template 
-│   └── .gitignore                  # Git ignore rules
+├── server/                              # Node.js / Express backend
+│   ├── models/                          # Mongoose schemas
+│   │   ├── trainerm.js                  # Trainer (User) model
+│   │   ├── pokemonm.js                  # Pokemon model
+│   │   ├── pokecenterm.js               # PokeCenter model
+│   │   └── applicationm.js              # Application model
+│   ├── routes/                          # Express route handlers
+│   │   ├── trainerr.js                  # Trainer routes (register, login, auth middleware)
+│   │   ├── pokemonr.js                  # Pokemon routes
+│   │   ├── pokecenterr.js               # PokeCenter routes
+│   │   └── applicationr.js              # Application routes
+│   ├── seedStarters.js                  # Database seeding script (27 starters)
+│   ├── checkDatabase.js                 # Database verification utility
+│   ├── makeAdmin.js                     # Admin user promotion utility
+│   ├── testAdoption.js                  # Adoption flow test script
+│   ├── index.js                         # Server entry point
+│   └── package.json
 │
-├── client/                         # React frontend (Vite)
+├── client/                              # React frontend (Vite)
 │   ├── src/
-│   │   ├── pages/                  # Page components
-│   │   │   ├── Login.jsx           # Login/Register page
-│   │   │   ├── Browse.jsx          # Browse Pokemon 
-│   │   │   ├── Centers.jsx         # PokeCenters page 
-│   │   │   ├── MyApplications.jsx  # User applications 
-│   │   │   └── AdminReview.jsx     # Admin panel 
+│   │   ├── pages/                       # Page components
+│   │   │   ├── Login.jsx                # Login/Register page
+│   │   │   ├── Login.css                # Login page styles
+│   │   │   ├── Browse.jsx               # Browse Pokemon by region/type
+│   │   │   ├── Centers.jsx              # PokeCenters page
+│   │   │   ├── MyApplications.jsx       # User applications tracker
+│   │   │   └── AdminReview.jsx          # Admin review panel
 │   │   ├── components/
-│   │   │   ├── NavBar.jsx          # Navigation bar 
-│   │   │   └── NavBar.css          # Navigation styles 
-│   │   ├── context/
-│   │   │   └── AuthContext.jsx     # Auth state management
-│   │   ├── App.jsx                 # Root component 
-│   │   ├── main.jsx                # React entry point
-│   │   └── index.css               # Global styles
+│   │   │   ├── NavBar.jsx               # Navigation bar
+│   │   │   ├── NavBar.css               # Navigation styles
+│   │   │   ├── WorldMap/                # Interactive world map
+│   │   │   │   ├── WorldMap.jsx         # Map container with region markers
+│   │   │   │   ├── WorldMap.css         # Map layout and animations
+│   │   │   │   └── RegionMarker.jsx     # Clickable region marker pins
+│   │   │   ├── RegionShowcase/          # Region detail showcase
+│   │   │   │   ├── RegionShowcase.jsx   # Pokemon grid for selected region
+│   │   │   │   └── RegionShowcase.css   # Showcase styles and animations
+│   │   │   └── ProfessorDialogue/       # Professor dialogue system
+│   │   │       ├── ProfessorDialogue.jsx # Typewriter dialogue with portraits
+│   │   │       └── ProfessorDialogue.css # Dialogue overlay and cinematic styles
+│   │   ├── data/
+│   │   │   ├── regionData.js            # Region config (professors, dialogues, map markers)
+│   │   │   └── assets/                  # Static images
+│   │   │       ├── map.png              # Custom world map background
+│   │   │       ├── [Region].png         # 9 region background images
+│   │   │       └── [Region] Professor [Name].png  # 9 professor portraits
+│   │   ├── utils/
+│   │   │   └── helpers.js               # Shared utilities (status colors, type colors)
+│   │   ├── App.jsx                      # Root component with routing
+│   │   ├── main.jsx                     # React entry point
+│   │   └── index.css                    # Global styles
 │   ├── index.html
 │   ├── vite.config.js
-│   ├── package.json
-│   └── .gitignore                  # Git ignore rules
+│   └── package.json
 │
-└── README.md                       # This file
+├── quickOpen.bat                        # Windows one-click start script
+├── .gitignore                           # Git ignore rules
+├── LICENSE                              # Project license
+└── README.md                            # This file
 ```
 
 ---
 
 ## ✨ Features
 
+### Interactive World Map Experience
+- 🗺️ Custom-illustrated world map with all 9 Pokémon regions
+- 📍 Clickable PokeCenter markers positioned on each region
+- 🎓 Region professors greet you with unique typewriter-style dialogue
+- 🖼️ Full professor portraits with cinematic overlay presentation
+- ✨ Smooth animations, hover effects, and region transitions
+
 ### Standard User (Trainer)
 - ✅ Register and login with JWT authentication
-- ✅ Browse 27 starter Pokemon from 9 regions
-- ✅ Filter Pokemon by region (Kanto → Paldea)
-- ✅ Filter Pokemon by type (Fire, Water, Grass)
-- ✅ Submit adoption applications with custom Pokemon names
+- ✅ Browse 27 starter Pokémon from 9 regions (Kanto → Paldea)
+- ✅ Explore regions via interactive world map
+- ✅ Meet region professors with animated dialogue sequences
+- ✅ Filter Pokémon by region and type (Fire, Water, Grass, etc.)
+- ✅ Submit adoption applications with custom Pokémon names
 - ✅ Track application status (Pending/Approved/Rejected)
 - ✅ View admin feedback on applications
 - ✅ View PokeCenter locations
@@ -227,12 +246,14 @@ Pokemon-Adoption-Portal/
 ### For Trainers:
 
 1. **Register** - Create account on login page
-2. **Browse** - View available starter Pokemon
-3. **Adopt** - Click "Adopt Me!" on a Pokemon
-4. **Name** - Enter the name you want to give the Pokemon (required)
-5. **Submit** - Add optional message and submit application
-6. **Track** - Check "My Applications" for status updates
-7. **Celebrate** - When approved, see your Pokemon with its new name!
+2. **Explore** - Navigate the interactive world map
+3. **Meet Professors** - Click a region marker to meet its professor
+4. **Browse** - View available starter Pokémon in each region
+5. **Adopt** - Click "Adopt Me!" on a Pokémon
+6. **Name** - Enter the name you want to give the Pokémon (required)
+7. **Submit** - Add optional message and submit application
+8. **Track** - Check "My Applications" for status updates
+9. **Celebrate** - When approved, see your Pokémon with its new name!
 
 ### For Admins:
 
@@ -255,7 +276,7 @@ Pokemon-Adoption-Portal/
   level: Number (default: 5),
   status: String,                    // "available", "pending", "adopted"
   pokecenter: ObjectId,              // Reference to PokeCenter
-  imageUrl: String,                  // Official PokeAPI artwork
+  imageUrl: String,                  // Official Pokemon artwork
   givenName: String,                 // Name assigned by trainer
   adoptedBy: ObjectId                // Reference to Trainer
 }
@@ -305,6 +326,11 @@ Pokemon-Adoption-Portal/
 | PUT | `/:id` | Update application (approve/reject) | - |
 | DELETE | `/:id` | Delete application | - |
 
+### PokeCenters (`/api/pokecenters`)
+| Method | Endpoint | Description | Auth |
+|--------|----------|-------------|------|
+| GET | `/` | Get all PokeCenters | Public |
+
 ---
 
 ## 🎨 Technologies Used
@@ -313,30 +339,34 @@ Pokemon-Adoption-Portal/
 - **Node.js** - JavaScript runtime
 - **Express.js** - Web framework
 - **MongoDB** - NoSQL database
-- **Mongoose** - MongoDB ODM
+- **Mongoose** (v8) - MongoDB ODM
 - **JWT** - Authentication tokens
 - **bcryptjs** - Password hashing
+- **nodemon** - Development auto-restart
 
 ### Frontend
-- **React** - UI library
-- **Vite** - Build tool
-- **React Router** - Client-side routing
+- **React** (v19) - UI library
+- **Vite** (v6) - Build tool & dev server
+- **React Router** (v7) - Client-side routing
 - **Axios** - HTTP client
-- **Ant Design** - UI component library
-- **@ant-design/icons** - Icon library
+- **Ant Design** (v6) - UI component library
+- **@ant-design/icons** (v6) - Icon library
 
 ---
 
-## 📚 Documentation
+## 🌍 Regions & Professors
 
-Comprehensive guides available in the repository:
-
-- **SESSION_PROGRESS.md** - Complete development log and file changes
-- **APPLICATION_FLOW.md** - User journey and feature descriptions
-- **ADMIN_GUIDE.md** - Admin system documentation
-- **ADMIN_QUICK_START.md** - Quick reference for admins
-- **GITHUB_PUSH_GUIDE.md** - How to push to GitHub safely
-- **UPDATES.md** - Technical implementation details
+| Region | Professor | Specialty | Starters |
+|--------|-----------|-----------|----------|
+| Kanto | Professor Oak | The Pokémon Professor | Bulbasaur, Charmander, Squirtle |
+| Johto | Professor Elm | Evolution Researcher | Chikorita, Cyndaquil, Totodile |
+| Hoenn | Professor Birch | Field Researcher | Treecko, Torchic, Mudkip |
+| Sinnoh | Professor Rowan | Evolution Authority | Turtwig, Chimchar, Piplup |
+| Unova | Professor Juniper | Origin Researcher | Snivy, Tepig, Oshawott |
+| Kalos | Professor Sycamore | Mega Evolution Expert | Chespin, Fennekin, Froakie |
+| Alola | Professor Kukui | Move Researcher | Rowlet, Litten, Popplio |
+| Galar | Professor Magnolia | Dynamax Researcher | Grookey, Scorbunny, Sobble |
+| Paldea | Professor Sada | Terastal Researcher | Sprigatito, Fuecoco, Quaxly |
 
 ---
 
@@ -344,10 +374,10 @@ Comprehensive guides available in the repository:
 
 - Passwords hashed with bcryptjs (10 salt rounds)
 - JWT tokens for stateless authentication
+- Auth middleware with admin role checking (`authenticate` and `requireAdmin` in trainer routes)
 - Protected routes on both frontend and backend
 - Environment variables for sensitive data
-- .gitignore protects .env and node_modules
-- .env.example provided as template
+- `.gitignore` protects `.env` and `node_modules`
 
 **Important:** Never commit your `.env` file to Git!
 
@@ -357,11 +387,12 @@ Comprehensive guides available in the repository:
 
 ### Server (`server/`)
 ```bash
-npm run dev        # Start server with nodemon (auto-restart)
-npm start          # Start server (production)
-node seedStarters.js     # Seed database with 27 starters
-node checkDatabase.js    # Verify database contents
-node makeAdmin.js <username>  # Make user an admin
+npm run dev                    # Start server with nodemon (auto-restart)
+npm start                      # Start server (production)
+node seedStarters.js           # Seed database with 27 starters
+node checkDatabase.js          # Verify database contents
+node makeAdmin.js <username>   # Promote a user to admin
+node testAdoption.js           # Test the adoption flow
 ```
 
 ### Client (`client/`)
@@ -374,7 +405,6 @@ npm run preview    # Preview production build
 ---
 
 ## 🐛 Troubleshooting
-
 
 ### MongoDB connection fails
 - Check your connection string in `.env`
@@ -400,6 +430,11 @@ Ensure you have both packages installed:
 cd client
 npm install antd @ant-design/icons
 ```
+
+### Port conflicts
+- The server defaults to port **5001** (configurable via `PORT` in `.env`)
+- The client defaults to port **3000** (configurable via `vite.config.js`)
+- See the Mac Users note above if port 5000 is needed
 
 ---
 
@@ -438,7 +473,7 @@ This project is licensed for educational purposes.
 
 ## 🙏 Acknowledgments
 
-- Pokemon sprites from [PokeAPI](https://pokeapi.co/)
+- Pokemon artwork from official Pokémon assets
 - Ant Design for UI components
 - MongoDB Atlas for database hosting
 - All contributors and team members
@@ -448,11 +483,10 @@ This project is licensed for educational purposes.
 ## 📞 Support
 
 For issues or questions:
-1. Check the documentation files
-2. Review troubleshooting section
-3. Contact team members
-4. Create an issue on GitHub
+1. Review the troubleshooting section above
+2. Contact team members
+3. Create an issue on GitHub
 
 ---
 
-**Happy Pokemon Adopting! 🎉**
+**Happy Pokémon Adopting! 🎉**
