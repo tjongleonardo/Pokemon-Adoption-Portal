@@ -34,10 +34,10 @@ Before running this project, you need:
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
-### ⚡ Windows Quick Start
-If you are on Windows, you can simply double-click the `quickOpen.bat` file in the root directory. This will automatically install all dependencies and start both the client and server for you!
+### Windows Quick Start
+If you are on Windows, you can simply double-click the `quickOpen.bat` file in the root directory. This will automatically install all dependencies and start both the client and server for you. Before running the script, make sure you have set up your MongoDB Atlas connection string in the `.env` file.
 
 If you prefer to set up manually or are on a different OS, follow the steps below.
 
