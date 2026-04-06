@@ -1,12 +1,6 @@
-/**
- * Shared utility functions for the Pokemon Adoption Portal
- */
+// Utility functions for Pokemon Adoption Portal
 
-/**
- * Returns the color associated with an application status
- * @param {string} status - The application status ('pending', 'approved', 'rejected')
- * @returns {string} Hex color code
- */
+// Returns color for application status
 export const getStatusColor = (status) => {
   switch (status) {
     case 'pending': return '#faad14';
@@ -16,11 +10,7 @@ export const getStatusColor = (status) => {
   }
 };
 
-/**
- * Returns the color associated with a Pokemon type
- * @param {string} type - The Pokemon type string
- * @returns {string} Hex color code
- */
+// Returns color for Pokemon type
 export const getTypeColor = (type) => {
   const typeColors = {
     Fire: '#EE8130',
@@ -49,7 +39,5 @@ export const getTypeColor = (type) => {
   return '#777';
 };
 
-/**
- * Toast display duration in milliseconds
- */
+// Toast duration in milliseconds
 export const TOAST_DURATION = 4000;

@@ -4,18 +4,7 @@ import ProfessorDialogue from '../components/ProfessorDialogue/ProfessorDialogue
 import RegionShowcase from '../components/RegionShowcase/RegionShowcase';
 import { ANIMATION_CONFIG } from '../data/regionData';
 
-/**
- * Browse - Immersive Pokemon World Map Experience
- * 
- * Flow:
- * 1. User sees interactive world map with PokeCenter markers
- * 2. User clicks a region marker
- * 3. Professor dialogue scene plays
- * 4. Region Pokemon showcase appears with adoption functionality
- * 5. User can return to map to explore other regions
- */
-
-// View states for the Browse experience
+// Browse flow: Map → Professor dialogue → Pokemon showcase → Back to map
 const VIEW_STATES = {
   MAP: 'map',
   DIALOGUE: 'dialogue',

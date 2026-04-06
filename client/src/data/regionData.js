@@ -20,29 +20,16 @@ import alolaBg from './assets/Alola.png';
 import galarBg from './assets/Galar.png';
 import paldeaBg from './assets/Paldea.png';
 
-/**
- * Central configuration for all regions, professors, and map data.
- * 
- * MARKER POSITIONS:
- * - Coordinates are percentages (0-100) of the map container
- * - Adjust `x` and `y` values to reposition markers on the map
- */
-
+// Region config with professors and map data. Marker positions are percentages (0-100).
 export const REGIONS = {
   kanto: {
     id: 'kanto',
     name: 'Kanto',
     subtitle: 'Where Legends Begin',
-    color: '#E63946', // Red
-    // Background image for professor dialogue scene
-    // Import your image at the top of the file, then set it here:
-    // e.g. import kantoBg from './assets/kanto-bg.png';
-    //      background: kantoBg,
+    color: '#E63946',
     background: kantoBg,
     accentColor: '#FFB3B3',
-    // Marker position on the map (percentage-based for responsiveness)
     markerPosition: { x: 88, y: 60 },
-    // Set to a path like '/assets/markers/kanto.png' to use custom marker image
     markerImage: null,
     professor: {
       name: 'Professor Oak',
@@ -67,7 +54,7 @@ export const REGIONS = {
     id: 'johto',
     name: 'Johto',
     subtitle: 'The Land of Tradition',
-    color: '#FFD700', // Gold
+    color: '#FFD700',
     background: johtoBg,
     accentColor: '#FFF3B0',
     markerPosition: { x: 78, y: 73 },
@@ -94,7 +81,7 @@ export const REGIONS = {
     id: 'hoenn',
     name: 'Hoenn',
     subtitle: 'Tropical Paradise',
-    color: '#00CED1', // Dark Turquoise
+    color: '#00CED1',
     background: hoennBg,
     accentColor: '#B0E0E6',
     markerPosition: { x: 52, y: 76 },
@@ -121,7 +108,7 @@ export const REGIONS = {
     id: 'sinnoh',
     name: 'Sinnoh',
     subtitle: 'The Land of Myths',
-    color: '#4169E1', // Royal Blue
+    color: '#4169E1',
     background: sinnohBg,
     accentColor: '#B0C4DE',
     markerPosition: { x: 70, y: 30 },
@@ -148,7 +135,7 @@ export const REGIONS = {
     id: 'unova',
     name: 'Unova',
     subtitle: 'Urban Frontier',
-    color: '#9370DB', // Medium Purple
+    color: '#9370DB',
     background: unovaBg,
     accentColor: '#DDA0DD',
     markerPosition: { x: 28, y: 50 },
@@ -175,7 +162,7 @@ export const REGIONS = {
     id: 'kalos',
     name: 'Kalos',
     subtitle: 'Land of Beauty',
-    color: '#FF69B4', // Hot Pink
+    color: '#FF69B4',
     background: kalosBg,
     accentColor: '#FFB6C1',
     markerPosition: { x: 53, y: 41 },
@@ -202,7 +189,7 @@ export const REGIONS = {
     id: 'alola',
     name: 'Alola',
     subtitle: 'Island Paradise',
-    color: '#FF8C00', // Dark Orange
+    color: '#FF8C00',
     background: alolaBg,
     accentColor: '#FFDAB9',
     markerPosition: { x: 25, y: 86 },
@@ -229,7 +216,7 @@ export const REGIONS = {
     id: 'galar',
     name: 'Galar',
     subtitle: 'Industrial Wonder',
-    color: '#DC143C', // Crimson
+    color: '#DC143C',
     background: galarBg,
     accentColor: '#F08080',
     markerPosition: { x: 53, y: 33 },
@@ -256,7 +243,7 @@ export const REGIONS = {
     id: 'paldea',
     name: 'Paldea',
     subtitle: 'Open World Academy',
-    color: '#9932CC', // Dark Orchid
+    color: '#9932CC',
     background: paldeaBg,
     accentColor: '#DA70D6',
     markerPosition: { x: 48, y: 43 },
@@ -289,13 +276,9 @@ export const getRegion = (id) => REGIONS[id] || null;
 // Import map image at the top of the file
 import mapimage from './assets/map.png';
 
-// Default map background (can be replaced with custom image)
 export const MAP_CONFIG = {
-  // Set to a path like '/assets/map/world-map.png' for custom map background
   backgroundImage: mapimage,
-  // Fallback gradient when no image is provided
   fallbackBackground: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
-  // Aspect ratio for the map container
   aspectRatio: '16 / 9',
 };
 

@@ -2,12 +2,7 @@ import { REGION_LIST, MAP_CONFIG } from '../../data/regionData';
 import RegionMarker from './RegionMarker';
 import './WorldMap.css';
 
-/**
- * WorldMap - The main interactive map hub for browsing regions
- * 
- * Displays a world map with clickable PokeCenter markers for each region.
- * Uses MAP_CONFIG for background customization.
- */
+// Interactive world map with clickable PokeCenter markers
 function WorldMap({ onSelectRegion, activeRegion }) {
   const mapStyle = {
     backgroundImage: MAP_CONFIG.backgroundImage
