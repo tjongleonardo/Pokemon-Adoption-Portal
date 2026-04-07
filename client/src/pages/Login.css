@@ -1,8 +1,4 @@
-/* ───────────────────────────────────────────────
-   Login Page – Dark Gaming Theme (Global)
-   ─────────────────────────────────────────────── */
-
-/* ─── Page Layout ─── */
+/* Page Layout */
 .login-page {
   min-height: calc(100vh - 64px);
   display: flex;
@@ -13,7 +9,7 @@
   padding: 24px;
 }
 
-/* ─── Card (Dark UI Panel) ─── */
+/* Card (Dark UI Panel) */
 .login-card {
   width: 100%;
   max-width: 440px;
@@ -27,7 +23,7 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* ─── Header ─── */
+/* Header */
 .login-header {
   text-align: center;
   margin-bottom: 28px;
@@ -47,7 +43,7 @@
   margin: 0;
 }
 
-/* ─── Pokéball Icon ─── */
+/* Pokéball Icon */
 .pokeball-icon {
   width: 52px;
   height: 52px;
@@ -84,7 +80,7 @@
   z-index: 2;
 }
 
-/* ─── Tab Switcher ─── */
+/* Tab Switcher */
 .tab-switcher {
   display: flex;
   background: var(--theme-btn-bg);
@@ -118,7 +114,7 @@
   color: var(--theme-text);
 }
 
-/* ─── Error & Success ─── */
+/* Error & Success */
 .error-msg {
   background: rgba(231, 76, 60, 0.15);
   border: 1px solid rgba(231, 76, 60, 0.3);
@@ -141,7 +137,7 @@
   text-align: center;
 }
 
-/* ─── Form ─── */
+/* Form */
 .login-form {
   display: flex;
   flex-direction: column;
@@ -195,7 +191,7 @@
   color: var(--theme-text);
 }
 
-/* ─── Submit Button ─── */
+/* Submit Button */
 .submit-btn {
   margin-top: 8px;
   padding: 14px;
@@ -223,7 +219,7 @@
   filter: grayscale(100%);
 }
 
-/* ─── Spinner ─── */
+/* Spinner */
 .spinner-wrapper {
   display: flex;
   align-items: center;
@@ -244,7 +240,7 @@
   to { transform: rotate(360deg); }
 }
 
-/* ─── Password Wrapper ─── */
+/* Password Wrapper */
 .password-wrapper {
   position: relative;
   display: flex;
@@ -272,7 +268,7 @@
   color: var(--theme-text);
 }
 
-/* ─── Field Errors ─── */
+/* Field Errors */
 .field-error {
   color: #ff6b6b;
   font-size: 0.78rem;
@@ -285,7 +281,7 @@
   box-shadow: 0 0 0 1px rgba(255, 107, 107, 0.2);
 }
 
-/* ─── Switch Text ─── */
+/* Switch Text */
 .switch-text {
   text-align: center;
   color: var(--theme-text-muted);
@@ -310,7 +306,7 @@
   text-decoration: underline;
 }
 
-/* ─── Responsive ─── */
+/* Responsive */
 @media (max-width: 480px) {
   .login-card {
     padding: 28px 22px;
