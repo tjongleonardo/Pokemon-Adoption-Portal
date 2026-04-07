@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════════════════════
-   REGION SHOWCASE STYLES
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* REGION SHOWCASE STYLES */
 
 .region-showcase {
   min-height: calc(100vh - 64px);
@@ -10,7 +8,7 @@
   overflow: hidden;
 }
 
-/* ─── Intro Overlay ─── */
+/* Intro Overlay */
 .showcase-intro {
   position: fixed;
   inset: 0;
@@ -77,7 +75,7 @@
   margin: 0;
 }
 
-/* ─── Header ─── */
+/* Header */
 .showcase-header {
   display: flex;
   align-items: center;
@@ -140,7 +138,7 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* ─── Choose Banner - Inspired by choose.png ─── */
+/* Choose Banner */
 .choose-banner {
   display: flex;
   justify-content: center;
@@ -176,7 +174,7 @@
   animation: bounce 1s infinite;
 }
 
-/* ─── Pokemon Grid ─── */
+/* Pokemon Grid */
 .pokemon-showcase-grid {
   display: flex;
   flex-wrap: wrap;
@@ -185,7 +183,7 @@
   animation: fadeIn 0.5s 0.3s ease-out both;
 }
 
-/* ─── Pokemon Card ─── */
+/* Pokemon Card */
 .pokemon-showcase-card {
   width: 260px;
   opacity: 0;
@@ -221,7 +219,7 @@
   box-shadow: 0 0 30px color-mix(in srgb, var(--region-color) 40%, transparent);
 }
 
-/* ─── Pokemon Image ─── */
+/* Pokemon Image */
 .pokemon-image-container {
   position: relative;
   background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
@@ -269,7 +267,7 @@
   filter: blur(10px);
 }
 
-/* ─── Pokemon Details ─── */
+/* Pokemon Details */
 .pokemon-name {
   font-size: 1.2rem;
   font-weight: 700;
@@ -293,7 +291,7 @@
   font-size: 0.9rem;
 }
 
-/* ─── Adopt Button ─── */
+/* Adopt Button */
 .adopt-button {
   width: 100%;
   height: 44px;
@@ -316,7 +314,7 @@
   color: #888;
 }
 
-/* ─── Loading & Empty States ─── */
+/* Loading & Empty States */
 .loading-state,
 .empty-state {
   grid-column: 1 / -1;
@@ -346,7 +344,7 @@
   transform: translateY(-50%);
 }
 
-/* ─── Custom Modal Overlay (Replacing Ant Modal) ─── */
+/* Custom Modal Overlay (Replacing Ant Modal) */
 .custom-modal-overlay {
   position: fixed;
   top: 0;
@@ -424,7 +422,7 @@
   100% { transform: translate(-50%, 0); opacity: 1; }
 }
 
-/* ─── Custom UI Fixes for RegionShowcase ─── */
+/* Custom UI Fixes for RegionShowcase */
 .adopt-button {
   margin-top: auto;
   width: 100%;
@@ -473,7 +471,7 @@
   text-shadow: 1px 1px 0 #000;
 }
 
-/* ─── Dark Inner LCD Screen ─── */
+/* Dark Inner LCD Screen */
 .retro-screen-content {
   display: flex;
   flex-direction: column;
@@ -559,7 +557,7 @@
   box-shadow: inset 2px 2px 5px rgba(0,0,0,0.8), 0 0 8px rgba(76, 175, 80, 0.5) !important;
 }
 
-/* ─── Standard Buttons Theming ─── */
+/* Standard Buttons Theming */
 .retro-btn-cancel,
 .retro-btn-submit {
   font-family: 'Courier New', Courier, monospace !important;
@@ -585,7 +583,7 @@
   background: rgba(76, 175, 80, 0.1) !important;
 }
 
-/* ─── Animations ─── */
+/* Animations */
 @keyframes introFade {
   0%, 70% { opacity: 1; }
   100% { opacity: 0; pointer-events: none; }
@@ -644,7 +642,7 @@
   50% { transform: translateY(5px); }
 }
 
-/* ─── Responsive ─── */
+/* Responsive */
 @media (max-width: 768px) {
   .region-showcase {
     padding: 16px;
