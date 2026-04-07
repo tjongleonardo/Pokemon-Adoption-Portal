@@ -132,7 +132,7 @@ Open your browser and go to: **http://localhost:3000**
 
 ---
 
-## 🍎 Note on Ports (For Mac Users)
+## Note on Ports (For Mac Users)
 
 **macOS Monterey and later** use port 5000 for AirPlay Receiver, which is why this project has been updated to use port **5001** by default to avoid conflicts.
 
@@ -143,7 +143,7 @@ If you ever need to use port 5000, you can disable the AirPlay Receiver:
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Pokemon-Adoption-Portal/
@@ -211,14 +211,14 @@ Pokemon-Adoption-Portal/
 
 ---
 
-## ✨ Features
+## Features
 
 ### Interactive World Map Experience
-- 🗺️ Custom-illustrated world map with all 9 Pokémon regions
-- 📍 Clickable PokeCenter markers positioned on each region
-- 🎓 Region professors greet you with unique typewriter-style dialogue
-- 🖼️ Full professor portraits with cinematic overlay presentation
-- ✨ Smooth animations, hover effects, and region transitions
+-  Custom-illustrated world map with all 9 Pokémon regions
+-  Clickable PokeCenter markers positioned on each region
+-  Region professors greet you with unique typewriter-style dialogue
+-  Full professor portraits with cinematic overlay presentation
+-  Smooth animations, hover effects, and region transitions
 
 ### Standard User (Trainer)
 - ✅ Register and login with JWT authentication
@@ -241,7 +241,7 @@ Pokemon-Adoption-Portal/
 
 ---
 
-## 🎮 How to Use
+## How to Use
 
 ### For Trainers:
 
@@ -265,7 +265,7 @@ Pokemon-Adoption-Portal/
 
 ---
 
-## 🗄️ Database Schema
+## Database Schema
 
 ### Pokemon Model
 ```javascript
@@ -298,7 +298,7 @@ Pokemon-Adoption-Portal/
 
 ---
 
-## 🌐 API Endpoints
+## API Endpoints
 
 ### Trainers (`/api/trainers`)
 | Method | Endpoint | Description | Auth |
@@ -333,7 +333,7 @@ Pokemon-Adoption-Portal/
 
 ---
 
-## 🎨 Technologies Used
+## Technologies Used
 
 ### Backend
 - **Node.js** - JavaScript runtime
@@ -354,7 +354,7 @@ Pokemon-Adoption-Portal/
 
 ---
 
-## 🌍 Regions & Professors
+## Regions & Professors
 
 | Region | Professor | Specialty | Starters |
 |--------|-----------|-----------|----------|
@@ -370,7 +370,7 @@ Pokemon-Adoption-Portal/
 
 ---
 
-## 🔒 Security
+## Security
 
 - Passwords hashed with bcryptjs (10 salt rounds)
 - JWT tokens for stateless authentication
@@ -383,7 +383,7 @@ Pokemon-Adoption-Portal/
 
 ---
 
-## 🛠️ Development Scripts
+## Development Scripts
 
 ### Server (`server/`)
 ```bash
@@ -404,7 +404,7 @@ npm run preview    # Preview production build
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### MongoDB connection fails
 - Check your connection string in `.env`
@@ -438,7 +438,7 @@ npm install antd @ant-design/icons
 
 ---
 
-## 📦 Deployment
+## Deployment
 
 ### Deploy Backend (Render/Heroku)
 1. Create web service from GitHub repo
@@ -454,7 +454,7 @@ npm install antd @ant-design/icons
 
 ---
 
-## 👥 Authors
+## Authors
 
 - Leonardo Tjong - [GitHub](https://github.com/tjongleonardo)
 - Dalyn Ho
@@ -465,13 +465,13 @@ npm install antd @ant-design/icons
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed for educational purposes.
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Pokemon artwork from official Pokémon assets
 - Ant Design for UI components
@@ -480,7 +480,7 @@ This project is licensed for educational purposes.
 
 ---
 
-## 📞 Support
+## Support
 
 For issues or questions:
 1. Review the troubleshooting section above
