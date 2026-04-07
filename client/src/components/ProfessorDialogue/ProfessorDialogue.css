@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════════════════════
-   PROFESSOR DIALOGUE STYLES - Persona Inspired
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* PROFESSOR DIALOGUE */
 
 .professor-dialogue-scene {
   position: fixed;
@@ -17,7 +15,7 @@
   animation: sceneExit 0.5s ease-in forwards;
 }
 
-/* ─── Cinematic Bars ─── */
+/* Cinematic Bars */
 .cinematic-bar {
   position: absolute;
   left: 0;
@@ -37,7 +35,7 @@
   animation: barSlideIn 0.6s ease-out;
 }
 
-/* ─── Background ─── */
+/* Background */
 .dialogue-background {
   position: absolute;
   inset: 0;
@@ -96,7 +94,7 @@
   z-index: 2;
 }
 
-/* ─── Region Banner ─── */
+/* Region Banner */
 .region-banner {
   position: absolute;
   top: 80px;
@@ -130,7 +128,7 @@
   font-style: italic;
 }
 
-/* ─── Close Button ─── */
+/* Close Button */
 .dialogue-close {
   position: absolute;
   top: 80px;
@@ -156,7 +154,7 @@
   transform: scale(1.1);
 }
 
-/* ─── Professor Portrait ─── */
+/* Professor Portrait */
 .professor-portrait-container {
   position: absolute;
   left: 2%;
@@ -225,7 +223,7 @@
   filter: blur(20px);
 }
 
-/* ─── Dialogue Box Container ─── */
+/* Dialogue Box Container */
 .dialogue-box-container {
   position: relative;
   z-index: 10;
@@ -235,7 +233,7 @@
   animation: dialogueEnter 0.5s 0.4s ease-out both;
 }
 
-/* ─── Professor Name Tag - Persona Style ─── */
+/* Professor Name Tag - Persona Style */
 .professor-name-tag {
   display: inline-flex;
   flex-direction: column;
@@ -260,7 +258,7 @@
   margin-top: 2px;
 }
 
-/* ─── Main Dialogue Box ─── */
+/* Main Dialogue Box */
 .dialogue-box {
   background: linear-gradient(180deg, rgba(15, 15, 25, 0.97) 0%, rgba(25, 25, 40, 0.97) 100%);
   border: 3px solid var(--region-color);
@@ -294,7 +292,7 @@
   margin-left: 2px;
 }
 
-/* ─── Continue Indicator ─── */
+/* Continue Indicator */
 .dialogue-continue {
   position: absolute;
   bottom: 12px;
@@ -314,7 +312,7 @@
   animation: bounce 1s infinite;
 }
 
-/* ─── Dialogue Progress ─── */
+/* Dialogue Progress */
 .dialogue-progress {
   display: flex;
   gap: 8px;
@@ -340,7 +338,7 @@
   background: var(--region-accent);
 }
 
-/* ─── Decorative Elements ─── */
+/* Decorative Elements */
 .dialogue-decor {
   position: absolute;
   width: 150px;
@@ -364,7 +362,7 @@
   height: 100px;
 }
 
-/* ─── Animations ─── */
+/* Animations */
 @keyframes sceneEnter {
   from {
     opacity: 0;
@@ -456,7 +454,7 @@
   to { background-position: 30px 30px; }
 }
 
-/* ─── Responsive ─── */
+/* Responsive */
 @media (max-width: 1400px) {
   .professor-portrait-container {
     width: min(40vw, 500px);
