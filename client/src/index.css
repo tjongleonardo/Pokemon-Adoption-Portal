@@ -1,4 +1,4 @@
-/* ─── Global Variables ─── */
+/* Global Variables */
 :root {
   /* Global Brand */
   --pokedex-red: #CC0000;
@@ -17,7 +17,7 @@
 
 
 
-/* ─── Global Reset ─── */
+/* Global Reset */
 *,
 *::before,
 *::after {
@@ -44,7 +44,7 @@ ul, ol {
   list-style: none;
 }
 
-/* ─── Global Custom UI Components ─── */
+/* Global Custom UI Components */
 .custom-card {
   background: var(--theme-card-bg);
   border: 1px solid var(--theme-border);
